@@ -203,6 +203,68 @@
       --outline-color: var(--outline-color-light-theme);
     }
   }
+
+  /* 
+    Users can manually also chose to view the website in light and dark theme modes by clicking
+    a button. When that happens we set a custom data attribute on the body tag. This is where we 
+    check for that and apply the correct themes if it exists.
+  */
+
+  body[data-theme="dark"] {
+    --surface-1-background: var(--surface-1-background-dark-theme);
+    --surface-1-text: var(--surface-1-text-dark-theme);
+
+    --surface-2-background: var(--surface-2-background-dark-theme);
+    --surface-2-text: var(--surface-2-text-dark-theme);
+
+    --surface-3-background: var(--surface-3-background-dark-theme);
+    --surface-3-text: var(--surface-3-text-dark-theme);
+
+    --surface-4-background: var(--surface-4-background-dark-theme);
+    --surface-4-text: var(--surface-4-text-dark-theme);
+
+    --surface-5-background: var(--surface-5-background-dark-theme);
+    --surface-5-text: var(--surface-5-text-dark-theme);
+
+    --surface-6-background: var(--surface-6-background-dark-theme);
+    --surface-6-text: var(--surface-6-text-dark-theme);
+
+    --surface-7-background: var(--surface-7-background-dark-theme);
+    --surface-7-text: var(--surface-7-text-dark-theme);
+
+    --surface-8-background: var(--surface-8-background-dark-theme);
+    --surface-8-text: var(--surface-8-text-dark-theme);
+
+    --outline-color: var(--outline-color-dark-theme);
+  }
+
+  body[data-theme="light"]{
+    --surface-1-background: var(--surface-1-background-light-theme);
+    --surface-1-text: var(--surface-1-text-light-theme);
+
+    --surface-2-background: var(--surface-2-background-light-theme);
+    --surface-2-text: var(--surface-2-text-light-theme);
+
+    --surface-3-background: var(--surface-3-background-light-theme);
+    --surface-3-text: var(--surface-3-text-light-theme);
+
+    --surface-4-background: var(--surface-4-background-light-theme);
+    --surface-4-text: var(--surface-4-text-light-theme);
+
+    --surface-5-background: var(--surface-5-background-light-theme);
+    --surface-5-text: var(--surface-5-text-light-theme);
+
+    --surface-6-background: var(--surface-6-background-light-theme);
+    --surface-6-text: var(--surface-6-text-light-theme);
+
+    --surface-7-background: var(--surface-7-background-light-theme);
+    --surface-7-text: var(--surface-7-text-light-theme);
+
+    --surface-8-background: var(--surface-8-background-light-theme);
+    --surface-8-text: var(--surface-8-text-light-theme);
+
+    --outline-color: var(--outline-color-light-theme);
+  }
 }
 
 @layer layout {
