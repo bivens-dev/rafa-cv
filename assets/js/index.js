@@ -1,11 +1,4 @@
-import { DarkModeController } from "./dark-mode-controller.js";
+import { ThemeToggle } from "./components/theme-toggle.js";
 
-window.onload = (event) => {
-  enableThemeSwitching();
-};
-
-function enableThemeSwitching() {
-  const darkModeButton = document.getElementById('dark-mode-button');
-  const darkModeController = new DarkModeController();
-  darkModeButton.addEventListener('click', e => darkModeController.toggleDarkMode());
-}
+// We call define here so that the tag is now ready to be used.
+ThemeToggle.define();
