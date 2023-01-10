@@ -23,8 +23,31 @@
       We will set these later on in the theme section. 
       For now we will just leave them as `unset`.
     */
-    --background-color: unset;
-    --text-color: unset;
+    --surface-1-background: unset;
+    --surface-1-text: unset;
+
+    --surface-2-background: unset;
+    --surface-2-text: unset;
+
+    --surface-3-background: unset;
+    --surface-3-text: unset;
+
+    --surface-4-background: unset;
+    --surface-4-text: unset;
+
+    --surface-5-background: unset;
+    --surface-5-text: unset;
+
+    --surface-6-background: unset;
+    --surface-6-text: unset;
+
+    --surface-7-background: unset;
+    --surface-7-text: unset;
+
+    --surface-8-background: unset;
+    --surface-8-text: unset;
+    
+    --outline-color: unset;
 
     /* 
       Typography
@@ -49,14 +72,60 @@
 
   /* Light Theme Color Values */
   :root {
-    --background-color-light-theme: rgb(255, 252, 244);
-    --text-color-light-theme: rgb(27, 28, 23);
+    --surface-1-background-light-theme: rgb(255, 252, 244);
+    --surface-1-text-light-theme: rgb(27, 28, 23);
+
+    --surface-2-background-light-theme: rgb(85, 101, 0);
+    --surface-2-text-light-theme: rgb(255, 255, 255);
+
+    --surface-3-background-light-theme: rgb(92, 97, 70);
+    --surface-3-text-light-theme: rgb(255, 255, 255);
+
+    --surface-4-background-light-theme: rgb(58, 102, 93);
+    --surface-4-text-light-theme: rgb(255, 255, 255);
+
+    --surface-5-background-light-theme: rgb(227, 228, 211);
+    --surface-5-text-light-theme: rgb(70, 72, 60);
+
+    --surface-6-background-light-theme: rgb(17, 96, 164);
+    --surface-6-text-light-theme: rgb(255, 255, 255);
+
+    --surface-7-background-light-theme: rgb(186, 26, 26);
+    --surface-7-text-light-theme: rgb(255, 255, 255);
+
+    --surface-8-background-light-theme: rgb(132, 84, 0);
+    --surface-8-text-light-theme: rgb(255, 255, 255);
+
+    --outline-color-light-theme: rgb(119, 120, 106);
   }
 
   /* Dark Theme Color Values */
   :root {
-    --background-color-dark-theme: rgb(27, 28, 23);
-    --text-color-dark-theme: rgb(228, 226, 218);
+    --surface-1-background-dark-theme: rgb(27, 28, 23);
+    --surface-1-text-dark-theme: rgb(228, 226, 218);
+
+    --surface-2-background-dark-theme: rgb(187, 208, 100);
+    --surface-2-text-dark-theme: rgb(43, 52, 0);
+
+    --surface-3-background-dark-theme: rgb(197, 202, 168);
+    --surface-3-text-dark-theme: rgb(46, 51, 27);
+
+    --surface-4-background-dark-theme: rgb(161, 208, 196);
+    --surface-4-text-dark-theme: rgb(4, 55, 47);
+
+    --surface-5-background-dark-theme: rgb(70, 72, 60);
+    --surface-5-text-dark-theme: rgb(199, 200, 183);
+
+    --surface-6-background-dark-theme: rgb(161, 201, 255);
+    --surface-6-text-dark-theme: rgb(0, 50, 91);
+
+    --surface-7-background-dark-theme: rgb(255, 180, 171);
+    --surface-7-text-dark-theme: rgb(105, 0, 5);
+
+    --surface-8-background-dark-theme: rgb(255, 181, 91);
+    --surface-8-text-dark-theme: rgb(70, 42, 0);
+
+    --outline-color-dark-theme: rgb(145, 146, 131);
   }
   
   /* 
@@ -69,8 +138,31 @@
     them point to the dark theme values we just defined above.
   */
   :root {
-    --background-color: var(--background-color-dark-theme);
-    --text-color: var(--text-color-dark-theme);
+    --surface-1-background: var(--surface-1-background-dark-theme);
+    --surface-1-text: var(--surface-1-text-dark-theme);
+
+    --surface-2-background: var(--surface-2-background-dark-theme);
+    --surface-2-text: var(--surface-2-text-dark-theme);
+
+    --surface-3-background: var(--surface-3-background-dark-theme);
+    --surface-3-text: var(--surface-3-text-dark-theme);
+
+    --surface-4-background: var(--surface-4-background-dark-theme);
+    --surface-4-text: var(--surface-4-text-dark-theme);
+
+    --surface-5-background: var(--surface-5-background-dark-theme);
+    --surface-5-text: var(--surface-5-text-dark-theme);
+
+    --surface-6-background: var(--surface-6-background-dark-theme);
+    --surface-6-text: var(--surface-6-text-dark-theme);
+
+    --surface-7-background: var(--surface-7-background-dark-theme);
+    --surface-7-text: var(--surface-7-text-dark-theme);
+
+    --surface-8-background: var(--surface-8-background-dark-theme);
+    --surface-8-text: var(--surface-8-text-dark-theme);
+
+    --outline-color: var(--outline-color-dark-theme);
   }
 
   /* 
@@ -84,8 +176,31 @@
   */
   @media (prefers-color-scheme: light) {
     :root {
-      --background-color: var(--background-color-light-theme);
-      --text-color: var(--text-color-light-theme);
+      --surface-1-background: var(--surface-1-background-light-theme);
+      --surface-1-text: var(--surface-1-text-light-theme);
+
+      --surface-2-background: var(--surface-2-background-light-theme);
+      --surface-2-text: var(--surface-2-text-light-theme);
+
+      --surface-3-background: var(--surface-3-background-light-theme);
+      --surface-3-text: var(--surface-3-text-light-theme);
+
+      --surface-4-background: var(--surface-4-background-light-theme);
+      --surface-4-text: var(--surface-4-text-light-theme);
+
+      --surface-5-background: var(--surface-5-background-light-theme);
+      --surface-5-text: var(--surface-5-text-light-theme);
+
+      --surface-6-background: var(--surface-6-background-light-theme);
+      --surface-6-text: var(--surface-6-text-light-theme);
+
+      --surface-7-background: var(--surface-7-background-light-theme);
+      --surface-7-text: var(--surface-7-text-light-theme);
+
+      --surface-8-background: var(--surface-8-background-light-theme);
+      --surface-8-text: var(--surface-8-text-light-theme);
+
+      --outline-color: var(--outline-color-light-theme);
     }
   }
 }
@@ -96,9 +211,48 @@
   Here we are going to create a list of CSS classes that make it easy to style the page.
 */
 @layer utilities {
-  .background {
-    color: var(--text-color);
-    background-color: var(--background-color);
+  .surface-1 {
+    color: var(--surface-1-text);
+    background-color: var(--surface-1-background);
+  }
+
+  .surface-2 {
+    color: var(--surface-2-text);
+    background-color: var(--surface-2-background);
+  }
+
+  .surface-3 {
+    color: var(--surface-3-text);
+    background-color: var(--surface-3-background);
+  }
+
+  .surface-4 {
+    color: var(--surface-4-text);
+    background-color: var(--surface-4-background);
+  }
+
+  .surface-5 {
+    color: var(--surface-5-text);
+    background-color: var(--surface-5-background);
+  }
+
+  .surface-6 {
+    color: var(--surface-6-text);
+    background-color: var(--surface-6-background);
+  }
+
+  .surface-7 {
+    color: var(--surface-7-text);
+    background-color: var(--surface-7-background);
+  }
+
+  .surface-8 {
+    color: var(--surface-8-text);
+    background-color: var(--surface-8-background);
+  }
+
+  .outline {
+    border: 1px solid var(--outline-color);
   }
 
   .body-typography {
