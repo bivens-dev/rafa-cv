@@ -1,0 +1,110 @@
+/* 
+  Using CSS layers to give better control over how our styles are applied.
+  We just specify the order up front that we want to follow and we no 
+  longer need to worry about making sure that everything loads in the right order.
+
+  Docs: https://developer.mozilla.org/en-US/docs/Web/CSS/@layer
+*/
+@layer configuration, theme, layout, utilities;
+
+/* 
+  Configuration Section.
+
+  This is where we figure out all the different styles we want to make configurable.
+  We do this by creating some CSS custom properties.
+
+  Docs: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+*/
+@layer configuration {
+  :root {
+    /* 
+      Colors
+
+      We will set these later on in the theme section. 
+      For now we will just leave them as `unset`.
+    */
+    --background-color: unset;
+    --text-color: unset;
+
+    /* 
+      Typography
+
+      Using the values taken from https://open-props.style/ to make sure we get nice looking
+      fonts without having to worry about loading custom web fonts.
+    */
+    --font-sans: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+    --font-serif: ui-serif,serif;
+    --font-mono: Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace;
+  }
+}
+
+/* 
+  Theme Section.
+
+  We want to create a simple light and dark mode version of the page depending on 
+  the preferences of the user.
+*/
+@layer theme {
+  /* First we define some basic color schemes */
+
+  /* Light Theme Color Values */
+  :root {
+    --background-color-light-theme: rgb(255, 252, 244);
+    --text-color-light-theme: rgb(27, 28, 23);
+  }
+
+  /* Dark Theme Color Values */
+  :root {
+    --background-color-dark-theme: rgb(27, 28, 23);
+    --text-color-dark-theme: rgb(228, 226, 218);
+  }
+  
+  /* 
+    Set the default theme.
+
+    Now that we have the colors defined for the different themes we can start to use them.
+    First we set the default values we want to use if the user has no preference.
+    We are going to use the dark theme by default here. We will do that by using some of 
+    the CSS custom properties we set up earlier in the configuration section and make 
+    them point to the dark theme values we just defined above.
+  */
+  :root {
+    --background-color: var(--background-color-dark-theme);
+    --text-color: var(--text-color-dark-theme);
+  }
+
+  /* 
+    Set the alternative theme for users who prefer light mode
+
+    If users have indicated that they prefer light mode in their browser we can easily
+    swap out the colors we are using to accomodate that. We do that by wrapping the code
+    in a media query that ensures this code will ONLY apply if they have this setting enabled.
+
+    Docs: https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
+  */
+  @media (prefers-color-scheme: light) {
+    :root {
+      --background-color: var(--background-color-light-theme);
+      --text-color: var(--text-color-light-theme);
+    }
+  }
+}
+
+/* 
+  Utility Section
+
+  Here we are going to create a list of CSS classes that make it easy to style the page.
+*/
+@layer utilities {
+  .background {
+    color: var(--text-color);
+    background-color: var(--background-color);
+  }
+
+  .body-typography {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+  }
+}
+
+
