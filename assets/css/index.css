@@ -5,7 +5,7 @@
 
   Docs: https://developer.mozilla.org/en-US/docs/Web/CSS/@layer
 */
-@layer configuration, theme, layout, utilities;
+@layer configuration, theme, layout, utilities, components;
 
 /* 
   Configuration Section.
@@ -46,7 +46,7 @@
 
     --surface-8-background: unset;
     --surface-8-text: unset;
-    
+
     --outline-color: unset;
 
     /* 
@@ -205,6 +205,18 @@
   }
 }
 
+@layer layout {
+  /* Basic style normalization */
+  body {
+    margin: 0;
+  }
+
+  /* https://css-tricks.com/box-sizing/#aa-universal-box-sizing */
+  *, ::before, ::after { 
+    box-sizing: border-box; 
+  }
+}
+
 /* 
   Utility Section
 
@@ -259,6 +271,31 @@
     font-family: var(--font-sans);
     font-size: 1rem;
   }
+
+  .display-small-typography {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+  }
 }
 
+@layer components {
+  .top-bar {
+    display: flex;
+    padding: 1rem 3rem;
+    align-items: center;
+    justify-content: space-around;
+  }
 
+  .top-bar button {
+    color: var(--surface-1-background);
+    background-color: transparent;
+    border-radius: 3px;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .top-bar button:hover {
+    background-color: rgba(255,255,255, 0.2);
+  }
+}
