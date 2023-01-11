@@ -62,12 +62,6 @@ export class ThemeToggle extends HTMLElement {
   #renderStyles(){
     return `
     <style>
-      :host {
-        --theme-button-icon-color;
-        --theme-toggle-background-color;
-        --theme-toggle-border-color;
-      }
-
       #dark-mode-button {
         color: var(--theme-toggle-icon-color, black);
         background-color: var(--theme-toggle-background-color, transparent);
