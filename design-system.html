@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/css/index.css" rel="stylesheet" />
+    <title>Design System</title>
+
+    <!-- This tag means that search engines won't ever try to show this page in their results. -->
+    <meta name="robots" content="noindex">
+</head>
+<body class="surface-1 body-typography">
+  <style>
+    #colors {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      margin: auto;
+      flex-wrap: wrap;
+    }
+
+    .color-swatch {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1rem;
+      width: 100%;
+      height: 10rem;
+    }
+
+    main {
+      max-width: 50rem;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    main h2 {
+      padding: 0.5rem;
+    }
+
+    .design-system-section {
+      margin-bottom: 3rem !important;
+    }
+
+    /* Style overrides for larger devices */
+    @media (min-width: 400px) {
+      #colors {
+        justify-content: space-between;
+      }
+
+      .color-swatch {
+        width: 10rem;
+        
+      }
+    }
+  </style>
+
+  <header class="top-bar surface-5">
+    <p class="display-small-typography">Design System</p>
+    <theme-toggle></theme-toggle>
+  </header>
+
+  <main>
+    <h2 class="surface-3">Surface Colors</h2>
+    <section id="colors" class="design-system-section">
+      <div class="surface-1 color-swatch outline">Surface 1</div>
+      <div class="surface-2 color-swatch outline">Surface 2</div>
+      <div class="surface-3 color-swatch outline">Surface 3</div>
+      <div class="surface-4 color-swatch outline">Surface 4</div>
+      <div class="surface-5 color-swatch outline">Surface 5</div>
+      <div class="surface-6 color-swatch outline">Surface 6</div>
+      <div class="surface-7 color-swatch outline">Surface 7</div>
+      <div class="surface-8 color-swatch outline">Surface 8</div>
+    </section>
+
+    <h2 class="surface-3">Typography</h2>
+    <p class="body-typography">Body Text</p>
+    <p class="display-small-typography">Display Small</p>
+  </main>
+  
+
+  <script type="module" src="assets/js/index.js"></script>
+</body>
+</html>
