@@ -12,17 +12,21 @@
  * @property {HTMLButtonElement} themeButton - the actual button users will click
  */
 export class ThemeToggle extends HTMLElement {
-  // What is the HTML tag name we want to use
-  static define(tag = "theme-toggle") {
-    customElements.define(tag, this);
-  }
 
-  // Make a ShadowDOM and assign it to public state
+  // Make a ShadowDOM and assign it to public state (Web Component Specific code)
   shadowRoot = this.attachShadow({ mode: "open" });
 
+  // the current theme value (dark or light)
   #currentSetting;
 
+  // the actual button users will click
   #themeButton;
+
+  constructor(){
+    // Important to remember that the when making a Web Component the first thing we need to
+    // put in the constructor function is a call to super() so everything is set up properly.
+    super();
+  }
 
   // What do we want to do when the tag is added to the page
   connectedCallback() {
