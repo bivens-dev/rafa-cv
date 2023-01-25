@@ -271,11 +271,25 @@
   /* Basic style normalization */
   body {
     margin: 0;
+    min-height: 100vh;
   }
 
   /* https://css-tricks.com/box-sizing/#aa-universal-box-sizing */
   *, ::before, ::after { 
     box-sizing: border-box; 
+  }
+
+  /* Based on: https://web.dev/patterns/layout/pancake-stack/ */
+  .pancake-stack {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  /* Based on https://web.dev/centering-in-css/ */
+  .content-center {
+    display: grid;
+    place-content: center;
+    gap: 1ch;
   }
 }
 
@@ -343,6 +357,7 @@
 }
 
 @layer components {
+  /* Header */
   .top-bar {
     display: flex;
     padding: 1rem 3rem;
@@ -354,45 +369,41 @@
     --theme-toggle-icon-color: var(--surface-1-background);
   }
 
+  /* Hero Section */
+
   .hero-section {
-    background-image: url("../images/porto-bridge.jpg");
+    background-image: url("../images/porto-river-sunset.jpg");
     background-image: -webkit-image-set(
-      url("../images/porto-bridge.avif") type("image/avif"),
-      url("../images/porto-bridge.webp") type("image/webp"),
-      url("../images/porto-bridge.jpg") type("image/jpeg")
+      url("../images/porto-river-sunset.avif") type("image/avif"),
+      url("../images/porto-river-sunset.webp") type("image/webp"),
+      url("../images/porto-river-sunset.jpg") type("image/jpeg")
     );
     background-image: image-set(
-      url("../images/porto-bridge.avif") type("image/avif"),
-      url("../images/porto-bridge.webp") type("image/webp"),
-      url("../images/porto-bridge.jpg") type("image/jpeg")
+      url("../images/porto-river-sunset.avif") type("image/avif"),
+      url("../images/porto-river-sunset.webp") type("image/webp"),
+      url("../images/porto-river-sunset.jpg") type("image/jpeg")
     );
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 80vh;
+    min-height: 80vh;
   }
 
   .hero-overlay {
-    background-color: rgba(27, 28, 23, 0.5);
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
-    height: 100%;
-    width: 100%;
+    background-color: rgba(27, 28, 23, 0.65);
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+    min-height: 80vh;
   }
 
   [data-theme="light"] .hero-overlay {
     background-color: rgba(255, 252, 244, 0.65);
-    -webkit-backdrop-filter: saturate(30%) blur(4px);
-    backdrop-filter: saturate(30%) blur(4px);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
   }
 
   .hero-content {
     max-width: 50rem;
-    display: flex;
-    height: 100%;
-    margin: auto;
-    justify-content: center;
-    flex-direction: column;
     padding: 2rem;
   }
 
@@ -410,5 +421,27 @@
   .hero-content p {
     font-size: 2.5rem;
     font-weight: 200;
+    padding: 1rem;
+    border-radius: 3px;
+  }
+
+  /* Footer  */
+
+  .footer-links a {
+    text-decoration: none;
+  }
+
+  .footer-links {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  img.social-links {
+    padding: 1rem;
+    height: 4.5rem;
+  }
+
+  .social-links:hover {
+    border: 1px solid var(--outline-color);
   }
 }
