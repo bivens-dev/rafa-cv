@@ -272,6 +272,7 @@
   body {
     margin: 0;
     min-height: 100vh;
+    max-width: 100vw;
   }
 
   /* https://css-tricks.com/box-sizing/#aa-universal-box-sizing */
@@ -413,7 +414,7 @@
   }
 
   .hero-content h2 {
-    font-size: 5.5rem;
+    font-size: clamp(4rem, 5rem, 5.5rem); /* https://developer.mozilla.org/en-US/docs/Web/CSS/clamp */
     font-family: var(--font-serif);
     letter-spacing: 0.01em;
   }
