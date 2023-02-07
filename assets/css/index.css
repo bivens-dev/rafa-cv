@@ -300,6 +300,16 @@
     padding-inline: clamp(1.375rem, 1.2rem + 0.89vw, 2rem);
     position: relative;
   }
+
+  /* When the page theme is set to light and we have an image that needs to invert its colors */
+  body[data-theme="light"] img[data-invert="on-light"] {
+    filter: invert(1);
+  }
+
+  /* When the page theme is set to dark and we have an image that needs to invert its colors */
+  body[data-theme="dark"] img[data-invert="on-dark"] {
+    filter: invert(1);
+  }
 }
 
 /* 
@@ -357,12 +367,23 @@
     font-size: 1rem;
   }
 
+  .prose {
+    max-width: 70ch;
+    font-size: 1.3rem;
+  }
+
   .display-small-typography {
     font-size: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     font-weight: 600;
   }
+
+  .light-typography {
+    font-weight: 100;
+  }
+
+
 }
 
 @layer components {
@@ -460,10 +481,48 @@
     margin-block: 0.5rem;
   }
 
-  .about-section-text p {
-    max-width: 70ch;
-    font-size: 1.3rem;
+  /* Projects Section */
+
+  .projects-section {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    margin-block: 1rem;
+    padding: 1rem;
+    width: 100%
+  }
+
+  .project-card img {
+    scale: 0.7;
+    margin-block-end: 0.5rem;
+  }
+
+  .project-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-links a:hover{
+    opacity: 0.8;
+  }
+
+  .button {
+    margin-block: 0.5rem;
+    padding: 1rem;
+    text-decoration: none;
+    width: 25ch;
+    border-radius: 3px;
+  }
+
 
   /* Footer  */
 
@@ -507,6 +566,15 @@
     .about-section-text {
       /* We don't need the margin any more because we use the `space-around` to handle the layout now */
       margin-inline-start: unset;
+    }
+
+    .project-card {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .project-description {
+      text-align: left;
     }
   }
 }
