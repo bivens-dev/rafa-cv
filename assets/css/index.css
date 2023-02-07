@@ -292,6 +292,14 @@
     place-content: center;
     gap: 1ch;
   }
+
+  /* Create a class that helps us take up a reasonable amount of width on the screen depending how big the screen is */
+  .container {
+    margin-inline: auto;
+    width: clamp(16rem, 95vw, 85rem);
+    padding-inline: clamp(1.375rem, 1.2rem + 0.89vw, 2rem);
+    position: relative;
+  }
 }
 
 /* 
@@ -426,6 +434,37 @@
     border-radius: 3px;
   }
 
+  /* About Section */
+
+  .about-section {
+    margin-block: 3rem;
+    padding: 1rem;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-section-text a {
+    /* Keep the links the same color as the rest of the text just make them bold */
+    color: var(--surface-4-text);
+    font-weight: bold;
+  }
+
+  .about-section-text {
+    text-align: center;
+  }
+
+  .about-section-text h4 {
+    font-size: 3rem;
+    margin-block: 0.5rem;
+  }
+
+  .about-section-text p {
+    max-width: 70ch;
+    font-size: 1.3rem;
+  }
+
   /* Footer  */
 
   .footer-links a {
@@ -444,5 +483,30 @@
 
   .social-links:hover {
     border: 1px solid var(--outline-color);
+  }
+
+  /* Whatever changes we want to make for medium sized screens and above */
+  @media (width >= 768px) {
+    .about-section {
+      flex-direction: row;
+    }
+
+    .about-section-text {
+      margin-inline-start: 2rem;
+      text-align: left;
+    }
+  }
+
+  /* Whatever changes we want to make for large screens */
+  @media (width >= 1240px) {
+    .about-section {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .about-section-text {
+      /* We don't need the margin any more because we use the `space-around` to handle the layout now */
+      margin-inline-start: unset;
+    }
   }
 }
