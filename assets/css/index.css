@@ -523,6 +523,21 @@
     border-radius: 3px;
   }
 
+  .project-tags {
+    display: flex;
+    justify-content: start;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    background-color: var(--surface-5-background);
+    color: var(--surface-5-text);
+    border-radius: 10px;
+    padding: 0.3rem 0.5rem;
+  }
+
 
   /* Footer  */
 
@@ -575,6 +590,11 @@
 
     .project-description {
       text-align: left;
+      flex-grow: 1;
+    }
+
+    .project-links {
+      min-width: 385px;
     }
   }
 }
