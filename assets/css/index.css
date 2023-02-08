@@ -483,7 +483,7 @@
 
   /* Projects Section */
 
-  .projects-section {
+  .projects-section, .references-section {
     text-align: center;
     display: flex;
     align-items: center;
@@ -538,8 +538,50 @@
     padding: 0.3rem 0.5rem;
   }
 
+  /* References Section */
+
+  .testimonial-card {
+    border-radius: 5px;
+    max-width: 60ch;
+  }
+
+  .testimonial-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    justify-content: space-around;
+  }
+
+  .testimonial-photo {
+    border-radius: 100%;
+  }
+
+  .testimonial-person {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-weight: 200;
+    text-align: left;
+  }
+
+  .testimonial-name {
+    font-weight: bold;
+    font-size: 1.15rem;
+  }
+
+  .testimonial-body {
+    padding: 1rem;
+    text-align: left;
+    font-style: italic;
+  }
+
 
   /* Footer  */
+
+  footer {
+    margin-top: 1.5rem;
+  }
 
   .footer-links a {
     text-decoration: none;
