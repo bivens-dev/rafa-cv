@@ -380,7 +380,7 @@
   }
 
   .light-typography {
-    font-weight: 100;
+    font-weight: 200;
   }
 
 
@@ -525,7 +525,7 @@
 
   .project-tags {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     gap: 1rem;
     align-items: center;
     flex-wrap: wrap;
@@ -595,6 +595,10 @@
 
     .project-links {
       min-width: 385px;
+    }
+
+    .project-tags {
+      justify-content: start;
     }
   }
 }
